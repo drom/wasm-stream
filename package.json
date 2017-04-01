@@ -7,7 +7,7 @@
     "wasm-stream": "wasm2json.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "eslint lib",
     "wabt": "for f in testsuite/*.wast; do ../../WebAssembly/wabt/out/clang/Debug/wast2wasm $f -o wasm/$(basename ${f} .${f##*.}).wasm -v > dump/$(basename ${f} .${f##*.}).asm ; done",
     "testgen": "for f in wasm/*.wasm; do ./bin/wasm2json.js < $f > json/$(basename ${f} .${f##*.}).json; done"
   },
